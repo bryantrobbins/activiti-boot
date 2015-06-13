@@ -17,3 +17,5 @@ I just wrote a README.
 ## Starter Project
 
 I used Spring Initializr (https://start.spring.io/) to create a Gradle Project with H2 and Actuator built in, and specified the Maven repo coordinates and other metadata. I'm a big fan of this tool.
+
+I've added the contents of my zip from Initializr to this commit.
