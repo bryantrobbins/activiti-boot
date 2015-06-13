@@ -24,3 +24,7 @@ I've added the contents of my zip from Initializr to this commit.
 
 I've added a basic .gitignore file to the project. I use examples from https://github.com/github/gitignore to
 build something that makes sense for my tool stack (Gradle + Intellij).
+
+## Package name
+
+Having to change the package name, because I'm an idiot and used a "-" in one ...

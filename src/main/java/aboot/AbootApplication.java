@@ -1,12 +1,12 @@
-package com.btr3.activiti-boot;
+package aboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ActivitiAndSpringBootExampleApplication {
+public class AbootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ActivitiAndSpringBootExampleApplication.class, args);
+        SpringApplication.run(AbootApplication.class, args);
     }
 }
