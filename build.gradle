@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.2.4.RELEASE'
+        springBootVersion = '1.1.12.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -11,7 +11,7 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
+apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot' 
@@ -21,8 +21,10 @@ jar {
     baseName = 'aboot'
     version = '0.0.1-SNAPSHOT'
 }
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+def activitiVersion = "5.17.0"
 
 repositories {
     mavenCentral()
@@ -30,7 +32,9 @@ repositories {
 
 
 dependencies {
+		compile("org.activiti:spring-boot-starter-basic:${activitiVersion}")
     compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.codehaus.groovy:groovy")
     runtime("com.h2database:h2")
     testCompile("org.springframework.boot:spring-boot-starter-test") 
 }

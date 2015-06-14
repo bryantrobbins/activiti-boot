@@ -28,3 +28,15 @@ build something that makes sense for my tool stack (Gradle + Intellij).
 ## Package name
 
 Having to change the package name, because I'm an idiot and used a "-" in one ...
+
+## Rolling back Spring Boot dependency
+
+Acitiviti only works with a bit older version(s) of Spring Boot. I've rolled my starter dependency
+version back to 1.12. The application can be built and run now:
+
+```
+gradle build
+java -jar build/libs/aboot-0.0.1-SNAPSHOT.jar
+```
+
+Of course, it doesn't really do anything.
