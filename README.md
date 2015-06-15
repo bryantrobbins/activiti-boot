@@ -40,3 +40,13 @@ java -jar build/libs/aboot-0.0.1-SNAPSHOT.jar
 ```
 
 Of course, it doesn't really do anything.
+
+## Added sample process definition
+
+I've continued through the tutorial to add the sample "Hire Process" process definition. One thing
+that is not very clear in the tutorial is where each of the pieces (the CommandLineRunner init and the
+ResumeService need to be defined.
+
+For now, I have put both into the AbootApplication.groovy file (the ResumeService as a class, and the
+init method as a method).
+
