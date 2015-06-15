@@ -34,6 +34,7 @@ repositories {
 dependencies {
     compile("org.activiti:spring-boot-starter-basic:${activitiVersion}")
     compile("org.activiti:spring-boot-starter-rest-api:${activitiVersion}")
+    compile("org.activiti:spring-boot-starter-jpa:${activitiVersion}")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.codehaus.groovy:groovy")
     runtime("com.h2database:h2")
