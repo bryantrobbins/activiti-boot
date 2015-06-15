@@ -63,7 +63,31 @@ to wrap operations around the workflow. Now we actually have persistence and con
 Activiti to provide a toy Web service. I'm pretty impressed at how little custom coding this took!
 
 This basically ends the original tutorial, so now I'll do some of my own stuff:
+
 * Create REST endpoints which set values on workflows
 * Add REST endpoints around creation of Applicants or equivalent domain objects
 * Harden auth up with LDAP
 * Deal with Java errors in service tasks as conditionals for workflow
+
+## Initial Updates for Ticketing Service
+
+*Does not compile yet*
+
+I have in my head an idea for a ticketing service. In enterprise situations, sometimes we have various ticketing
+services with their own REST/SOAP APIs, but need a common front-end. Also, we need some error handling and notifications
+if the ticket services are having any issues (services down, access rights, etc.). I updated the tutorial code
+to now be built around a persistent TicketRequest object instead of an Applicant, and updated my REST controller
+to support 3 methods:
+
+* /ticket (POST) - request a new ticket
+* /ticket/id (GET) - get the details of a given ticket request, including current status
+* /reset - clear any errors that may have occurred on previous ticket submissions so that they may be retried
+
+This is implying a sort of workflow too, that I'll have to translate into BPMN:
+
+* Task 1: Attempt to make a Web service call. If calls are "paused", move to Task 5. If call succeeds, move to
+Task 2. If call fails, move to Task 3.
+* Task 2: Update TicketRequest to mark as COMPLETE. Transition to end of workflow.
+* Task 3: Update global Pause variable to true. Transition to Task 4.
+* Task 4: Send an email with any available details of the external system's failure. Transition to Task 5.
+* Task 5: Wait for a reset. Must be manually triggered (via call from Controller) to transition back to Task 1.
