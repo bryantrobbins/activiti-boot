@@ -50,3 +50,8 @@ ResumeService need to be defined.
 For now, I have put both into the AbootApplication.groovy file (the ResumeService as a class, and the
 init method as a method).
 
+## REST API, for the WIN
+
+I've added the REST API for Activiti thanks to a single dependency in my gradle build file. Now I can start
+and otherwise manage workflow instances from curl commands. This is awesome ... it was pretty straightforward
+from the existing tutorial to do so.
