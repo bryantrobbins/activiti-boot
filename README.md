@@ -55,3 +55,15 @@ init method as a method).
 I've added the REST API for Activiti thanks to a single dependency in my gradle build file. Now I can start
 and otherwise manage workflow instances from curl commands. This is awesome ... it was pretty straightforward
 from the existing tutorial to do so.
+
+## Wrapped in REST Controller, Code Cleanup
+
+Still proceeding with the tutorial, I've created a REST Controller which I called "HiringController"
+to wrap operations around the workflow. Now we actually have persistence and controllers integrated with
+Activiti to provide a toy Web service. I'm pretty impressed at how little custom coding this took!
+
+This basically ends the original tutorial, so now I'll do some of my own stuff:
+* Create REST endpoints which set values on workflows
+* Add REST endpoints around creation of Applicants or equivalent domain objects
+* Harden auth up with LDAP
+* Deal with Java errors in service tasks as conditionals for workflow
